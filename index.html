@@ -26,19 +26,33 @@
           <option value="pix">Pix</option>
           <option value="cartao">Cartão</option>
         </select>
-        <button type="submit">Enviar Pedido via WhatsApp</button>
-      </form>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
-  </footer>
-  <script src="script.js"></script>
+             <form id="pedidoForm">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input type="tel" id="telefone" placeholder="Telefone" required>
+                <input type="text" id="endereco" placeholder="Endereço ou localização" required>
+        <select id="pagamento" required>
+                <option value="" disabled selected>Forma de pagamento</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Pix">Pix</option>
+                <option value="Cartão">Cartão</option>
+        </select>
 
-  <a href="https://wa.me/5521986164548?text=Quero%20um%20frango%20assado!" target="_blank">
-  <button>Testar WhatsApp Direto</button>
-</a>
-  
+                <!-- Aqui vai o botão que é um link disfarçado -->
+                <a id="linkPedido" href="#" target="_blank">
+                <button type="button">📲 Fazer Pedido Agora</button>
+                </a>
+            </form>
+       </section>
+            </main>
+            <footer>
+            <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
+            </footer>
+            <script src="script.js"></script>
+
+            <a href="https://wa.me/5521986164548?text=Quero%20um%20frango%20assado!" target="_blank">
+             <button>Testar WhatsApp Direto</button>
+           </a>
+
 
 </body>
 </html>
