@@ -2,56 +2,44 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Frango Assado do Anderson</title>
+  <title>Frango Assado do Nem</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🍗 Frango Assado do Anderson</h1>
+    <h1>🍗 Frango Assado do Nem</h1>
     <p>Pedidos apenas aos domingos até 11h!</p>
   </header>
+
   <main>
     <section>
       <h2>Cardápio</h2>
       <p>Frango Assado Inteiro - R$ 45,00</p>
     </section>
+
     <section>
       <h2>Faça seu pedido</h2>
       <form id="pedidoForm">
         <input type="text" id="nome" placeholder="Seu nome" required>
         <input type="tel" id="telefone" placeholder="Telefone com DDD" required>
-        <input type="text" id="endereco" placeholder="Endereço (ex: Rua Pimenteira, 123)" required>
-        <select id="pagamento">
-          <option value="dinheiro">Dinheiro</option>
-          <option value="pix">Pix</option>
-          <option value="cartao">Cartão</option>
+        <input type="text" id="endereco" placeholder="Endereço ou localização" required>
+
+        <select id="pagamento" required>
+          <option value="" disabled selected>Forma de pagamento</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+          <option value="Cartão">Cartão</option>
         </select>
-            <form id="pedidoForm">
-  <input type="text" id="nome" placeholder="Seu nome" required>
-  <input type="tel" id="telefone" placeholder="Telefone" required>
-  <input type="text" id="endereco" placeholder="Endereço ou localização" required>
 
-  <select id="pagamento" required>
-    <option value="" disabled selected>Forma de pagamento</option>
-    <option value="Dinheiro">Dinheiro</option>
-    <option value="Pix">Pix</option>
-    <option value="Cartão">Cartão</option>
-  </select>
+        <button type="submit">📲 Fazer Pedido Agora</button>
+      </form>
+    </section>
+  </main>
 
-  <button type="submit">📲 Fazer Pedido Agora</button>
-</form>   
-          
-       </section>
-            </main>
-            <footer>
-            <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
-            </footer>
-            <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
+  </footer>
 
-            <a href="https://wa.me/5521986164548?text=Quero%20um%20frango%20assado!" target="_blank">
-             <button>Testar WhatsApp Direto</button>
-           </a>
-
-
+  <script src="script.js"></script>
 </body>
 </html>
