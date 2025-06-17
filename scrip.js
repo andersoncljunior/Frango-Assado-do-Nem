@@ -1,16 +1,17 @@
-document.getElementById("pedidoForm").addEventListener("change", atualizarLink);
-document.getElementById("pedidoForm").addEventListener("keyup", atualizarLink);
+document.getElementById("pedidoForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-function atualizarLink() {
-  const nome = document.getElementById("nome").value;
-  const telefone = document.getElementById("telefone").value;
-  const endereco = document.getElementById("endereco").value;
+  const nome = document.getElementById("nome").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const endereco = document.getElementById("endereco").value.trim();
   const pagamento = document.getElementById("pagamento").value;
 
-  if (nome && telefone && endereco && pagamento) {
-    const mensagem = `Olá! Meu nome é ${nome}, telefone ${telefone}. Quero 1 frango assado para entregar no endereço: ${endereco}. Pagamento: ${pagamento}. Aguardo confirmação!`;
-    const url = `https://wa.me/5521986164548?text=${encodeURIComponent(mensagem)}`;
-
-    document.getElementById("linkPedido").href = url;
+  if (!nome || !telefone || !endereco || !pagamento) {
+    alert("Por favor, preencha todos os campos.");
+    return;
   }
-}
+
+  const mensagem = `Olá! Meu nome é ${nome}, telefone ${telefone}. Quero 1 frango assado para entregar no endereço: ${endereco}. Pagamento: ${pagamento}. Aguardo confirmação!`;
+  const url = `https://wa.me/5521986164548?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
