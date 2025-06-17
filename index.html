@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Frango Assado do Anderson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍗 Frango Assado do Anderson</h1>
+    <p>Pedidos apenas aos domingos até 11h!</p>
+  </header>
+  <main>
+    <section>
+      <h2>Cardápio</h2>
+      <p>Frango Assado Inteiro - R$ 45,00</p>
+    </section>
+    <section>
+      <h2>Faça seu pedido</h2>
+      <form id="pedidoForm">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="tel" id="telefone" placeholder="Telefone com DDD" required>
+        <input type="text" id="bairro" placeholder="Bairro" required>
+        <select id="pagamento">
+          <option value="dinheiro">Dinheiro</option>
+          <option value="pix">Pix</option>
+          <option value="cartao">Cartão</option>
+        </select>
+        <button type="submit">Enviar Pedido via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

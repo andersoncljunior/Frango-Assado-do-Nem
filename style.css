@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #fffaf0;
+  color: #333;
+}
+header {
+  background: #ffa500;
+  color: white;
+  padding: 1em;
+}
+main {
+  padding: 2em;
+}
+form input, form select, form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+button {
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+footer {
+  margin-top: 2em;
+  font-size: 0.9em;
+}
