@@ -14,7 +14,14 @@
   <main>
     <section>
       <h2>Cardápio</h2>
-      <p>Frango Assado Inteiro - R$ 45,00</p>
+           <ul>
+                <li><strong>KIT 1</strong> - Frango + Batata + Farofa – R$ 34,00</li>
+                <li><strong>KIT 2</strong> - Frango + Batata + Farofa + Linguiça – R$ 44,00</li>
+                <li><strong>KIT 3</strong> - Frango + Batata + Farofa + Linguiça + Coca 2L – R$ 56,00</li>
+                <li><strong>KIT 4</strong> - Frango + Batata + Farofa + Linguiça + Salpicão – R$ 62,00</li>
+                <li><strong>KIT 5</strong> - Frango + Batata + Farofa + Linguiça + Salpicão + Coca 2L – R$ 74,00</li>
+                <li><strong>KIT 7</strong> - Frango + Batata + Farofa + Salpicão – R$ 52,00</li>
+           </ul>
     </section>
 
     <section>
@@ -24,6 +31,16 @@
         <input type="tel" id="telefone" placeholder="Telefone com DDD" required>
         <input type="text" id="endereco" placeholder="Endereço ou localização" required>
 
+        <select id="kit" required>
+              <option value="" disabled selected>Escolha seu KIT</option>
+              <option value="KIT 1">KIT 1 - R$ 34,00</option>
+              <option value="KIT 2">KIT 2 - R$ 44,00</option>
+              <option value="KIT 3">KIT 3 - R$ 56,00</option>
+              <option value="KIT 4">KIT 4 - R$ 62,00</option>
+              <option value="KIT 5">KIT 5 - R$ 74,00</option>
+              <option value="KIT 7">KIT 7 - R$ 52,00</option>
+        </select>
+          
         <select id="pagamento" required>
           <option value="" disabled selected>Forma de pagamento</option>
           <option value="Dinheiro">Dinheiro</option>
