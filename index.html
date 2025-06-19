@@ -2,34 +2,83 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frango Assado do Nem</title>
+  
+  <!-- Google Fonts para uma letra mais bonita -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>🍗 Frango Assado do Nem</h1>
-    <p>Pedidos apenas aos domingos até 11h!</p>
+    <p>O melhor frango assado da região, direto na sua casa!</p>
+    <p class="aviso">📢 Pedidos apenas aos domingos até 11h!</p>
   </header>
 
   <main>
-    <section>
-      <h2>Cardápio</h2>
-           <ul>
-                <li><strong>KIT 1</strong> - Frango + Batata + Farofa – R$ 34,00</li>
-                <li><strong>KIT 2</strong> - Frango + Batata + Farofa + Linguiça – R$ 44,00</li>
-                <li><strong>KIT 3</strong> - Frango + Batata + Farofa + Linguiça + Coca 2L – R$ 56,00</li>
-                <li><strong>KIT 4</strong> - Frango + Batata + Farofa + Linguiça + Salpicão – R$ 62,00</li>
-                <li><strong>KIT 5</strong> - Frango + Batata + Farofa + Linguiça + Salpicão + Coca 2L – R$ 74,00</li>
-                <li><strong>KIT 7</strong> - Frango + Batata + Farofa + Salpicão – R$ 52,00</li>
-           </ul>
+    <section id="cardapio">
+      <h2>Nosso Cardápio</h2>
+      <div class="cardapio-grid">
+        <!-- Card do Kit 1 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+1" alt="Foto do Kit 1">
+          <h3>KIT 1</h3>
+          <p class="descricao">Frango + Batata + Farofa</p>
+          <p class="preco">R$ 34,00</p>
+        </div>
+
+        <!-- Card do Kit 2 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+2" alt="Foto do Kit 2">
+          <h3>KIT 2</h3>
+          <p class="descricao">Frango + Batata + Farofa + Linguiça</p>
+          <p class="preco">R$ 44,00</p>
+        </div>
+
+        <!-- Card do Kit 3 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+3" alt="Foto do Kit 3">
+          <h3>KIT 3</h3>
+          <p class="descricao">Frango + Batata + Farofa + Linguiça + Coca 2L</p>
+          <p class="preco">R$ 56,00</p>
+        </div>
+
+        <!-- Card do Kit 4 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+4" alt="Foto do Kit 4">
+          <h3>KIT 4</h3>
+          <p class="descricao">Frango + Batata + Farofa + Linguiça + Salpicão</p>
+          <p class="preco">R$ 62,00</p>
+        </div>
+        
+        <!-- Card do Kit 5 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+5" alt="Foto do Kit 5">
+          <h3>KIT 5</h3>
+          <p class="descricao">Frango + Batata + Farofa + Linguiça + Salpicão + Coca 2L</p>
+          <p class="preco">R$ 74,00</p>
+        </div>
+
+        <!-- Card do Kit 7 -->
+        <div class="kit-card">
+          <img src="https://via.placeholder.com/300x200/FFD700/000000?text=Foto+do+Kit+7" alt="Foto do Kit 7">
+          <h3>KIT 7</h3>
+          <p class="descricao">Frango + Batata + Farofa + Salpicão</p>
+          <p class="preco">R$ 52,00</p>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section id="pedido">
       <h2>Faça seu pedido</h2>
       <form id="pedidoForm">
-        <input type="text" id="nome" placeholder="Seu nome" required>
-        <input type="tel" id="telefone" placeholder="Telefone com DDD" required>
-        <input type="text" id="endereco" placeholder="Endereço ou localização" required>
+        <input type="text" id="nome" placeholder="Seu nome completo" required>
+        <input type="tel" id="telefone" placeholder="Telefone com DDD (Ex: 21999998888)" required>
+        <input type="text" id="endereco" placeholder="Endereço completo ou localização" required>
 
         <select id="kit" required>
               <option value="" disabled selected>Escolha seu KIT</option>
@@ -48,13 +97,13 @@
           <option value="Cartão">Cartão</option>
         </select>
 
-        <button type="submit">📲 Fazer Pedido Agora</button>
+        <button type="submit">📲 Fazer Pedido Pelo WhatsApp</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Frango do Anderson - Só aos domingos!</p>
+    <p>© 2025 - Frango do Anderson - Só aos domingos!</p>
   </footer>
 
   <script src="script.js"></script>
