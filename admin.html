@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Pedidos - Frango do Nem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #fdf4e7;
+    }
+    h1 {
+      color: #b3541e;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #ffe3c3;
+    }
+    select {
+      padding: 4px;
+    }
+    #painel {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 Painel de Pedidos</h1>
+
+  <input type="password" id="senha" placeholder="Digite a senha" />
+  <button onclick="verificarSenha()">Entrar</button>
+
+  <div id="painel">
+    <h2>Pedidos Recebidos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Cliente</th>
+          <th>Kit</th>
+          <th>Endereço</th>
+          <th>Status</th>
+          <th>Atualizar</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-pedidos">
+        <!-- Dados inseridos via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const pedidos = [
+      { codigo: "PED101", nome: "João", kit: "KIT 3", endereco: "Rua Pimenteira, 123", status: "Aguardando" },
+      { codigo: "PED102", nome: "Maria", kit: "KIT 1", endereco: "Rua da Feira, 456", status: "Aceito" },
+      { codigo: "PED103", nome: "Carlos", kit: "KIT 5", endereco: "Av. das Pedras, 789", status: "Em Preparo" }
+    ];
+
+    function verificarSenha() {
+      const senha = document.getElementById("senha").value;
+      if (senha === "admin") {
+        document.getElementById("painel").style.display = "block";
+        renderTabela();
+      } else {
+        alert("Senha incorreta!");
+      }
+    }
+
+    function renderTabela() {
+      const tbody = document.getElementById("tabela-pedidos");
+      tbody.innerHTML = "";
+
+      pedidos.forEach((pedido, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${pedido.codigo}</td>
+          <td>${pedido.nome}</td>
+          <td>${pedido.kit}</td>
+          <td>${pedido.endereco}</td>
+          <td>${pedido.status}</td>
+          <td>
+            <select onchange="atualizarStatus(${index}, this.value)">
+              <option disabled selected>Alterar</option>
+              <option value="Aceito">Aceito</option>
+              <option value="Em Preparo">Em Preparo</option>
+              <option value="A Caminho">A Caminho</option>
+              <option value="Entregue">Entregue</option>
+              <option value="Negado">Negado</option>
+            </select>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function atualizarStatus(index, novoStatus) {
+      pedidos[index].status = novoStatus;
+      renderTabela();
+    }
+  </script>
+</body>
+</html>
