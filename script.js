@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "KIT 7": "R$ 52,00",
     };
 
-    // 🔁 Enviar pedido para a API
+    let codigo = "N/A";
+
     try {
       const resposta = await fetch("https://frango-api.onrender.com/pedido", {
         method: "POST",
@@ -37,14 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
           endereco,
           kit,
           pagamento,
-          status: "PENDENTE",
         }),
       });
+
+      const data = await resposta.json();
 
       if (!resposta.ok) {
         alert("Erro ao enviar pedido para o sistema. Tente novamente.");
         return;
       }
+
+      codigo = data.codigo || "SEM_CODIGO";
+
     } catch (erro) {
       console.error("Erro ao enviar para API:", erro);
       alert("Erro ao conectar com o servidor.");
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ✅ Enviar para o WhatsApp
-    const mensagem = `Olá! Meu nome é ${nome}, telefone ${telefone}. Quero o ${kit} (${precos[kit]}), para entregar no endereço: ${endereco}. Forma de pagamento: ${pagamento}. Aguardo confirmação!`;
+    const mensagem = `Olá! Meu nome é ${nome}, telefone ${telefone}. Quero o ${kit} (${precos[kit]}), para entregar no endereço: ${endereco}. Forma de pagamento: ${pagamento}. Código do pedido: ${codigo}. Aguardo confirmação!`;
     const url = `https://wa.me/5521986164548?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
 
