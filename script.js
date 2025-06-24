@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🔁 Enviar pedido para a API
     try {
-      const resposta = await fetch("https://frango-api.onrender.com/pedidos", {
+      const resposta = await fetch("https://frango-api.onrender.com/pedido", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
